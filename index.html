@@ -608,6 +608,8 @@
     </a>
 
     <nav>
+      <a href="#">Home</a>
+      <a href="#faq">FAQ</a>
       <a href="#como-posso-ajudar">Como posso ajudar</a>
       <a href="#como-trabalho">Como trabalho</a>
       <a href="#sobre-mim">Sobre mim</a>
@@ -798,10 +800,8 @@
     }
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     els.forEach(el => obs.observe(el));
-    // Fallback: after 800ms, show anything still hidden (artifact iframe quirk)
-    setTimeout(() => els.forEach(el => el.classList.add('visible')), 800);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initReveal);
